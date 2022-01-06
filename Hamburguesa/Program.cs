@@ -1,4 +1,4 @@
-// debido a un error del git, nos vimos a la necesiada de colocar el codigo manualmente
+// debido a un error del git, nos vimos a la necesidad de colocar el codigo manualmente
 using System;
 using System.Collections.Generic;
 namespace NEGOCIO_DE_HAMBURGUESAS
