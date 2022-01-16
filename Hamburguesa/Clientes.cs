@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
-//
+using System.Linq;
+using System.Text;
+
 namespace NEGOCIO_DE_HAMBURGUESAS
 {     //El patrón utilizado que es Single responsability la cual indica que cada clase solo tiene una razón de ser 
     //la cual nos permite agregar funciones a futuro sin reestructurar el código fuente.
@@ -15,10 +17,20 @@ namespace NEGOCIO_DE_HAMBURGUESAS
 
         //Single Responsability 
         //METODO PARA MOSTRAR LOS CLIENTES
+        //ojo
         public void MostrarClientes(List<Cliente> ListaClientes)
         {
-
+            //Lamba con select para mostrar clientes
+            IEnumerable<Cliente> Listanombre = ListaClientes.Select(x => x);
+            //lee los datos que hay en la listanombre
+            foreach (var item in Listanombre)
+            {
+                //Muestra por pantalla la cédula, nombre, direccion, teléfono y correo.
+                Console.WriteLine(item.Cedula + "\t" + item.Nombre + "\t" + item.Direccion + "\t" + item.Telefono + "\t" + item.Correo_Electronico);
+            }
+            Console.ReadKey();
         }
+
         //METODO PARA ELIMINAR CLIENTES DE LA LISTA 
         public List<Cliente> EliminarCliente(List<Cliente> ListaCliente)
         {
@@ -172,11 +184,24 @@ namespace NEGOCIO_DE_HAMBURGUESAS
             }
             return f;
         }
-        // public String validarNom(List<Cliente> ListaCliente, string Cedula)
-
+        //ojo
+        public String validarNom(List<Cliente> ListaCliente, string Cedula)
+        {
+            string f = "";
+            //Lamba con select para validar nombres de clientes
+            IEnumerable<Cliente> Listanombre = ListaCliente.Select(x => x);
+            //lee lo qu hay en la listanombre
+            foreach (var item in Listanombre)
+            {
+                //una condicion para verificar si el número de cédula es igual a los números de cédulas ingresados
+                if (item.Cedula.Equals(Cedula))
+                {
+                    //se almacena el nombre de la persona
+                    f = item.Nombre;
+                }
+            }
+            //envía la variable que almacena el nombre de la persona
+            return f;
+        }
     }
 }
-
-
-
-
