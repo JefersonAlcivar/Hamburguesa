@@ -32,7 +32,7 @@ namespace NEGOCIO_DE_HAMBURGUESAS
                 if (!elegir.Equals("4"))
                 {
                     Console.Clear();
-                    Console.WriteLine("-----Menu Ventas PASTELERIA FACCI-----" + "\n 1.Pedidos" + "\n 2.Cliente" + "\n 3.Factura" + "\n 4.Salir");
+                    Console.WriteLine("-----Menu Ventas Negocio de Hamburguesas-----" + "\n 1.Pedidos" + "\n 2.Cliente" + "\n 3.Factura" + "\n 4.Salir");
                     elegir = Console.ReadLine();
                 }
                 else
